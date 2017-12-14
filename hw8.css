@@ -1,0 +1,174 @@
+.bs-example{
+      margin: 20px;
+    }
+    
+    $('.toggle').bootstrapToggle({
+        
+         width: 4%;
+        
+    })
+    
+   
+    .well {
+        
+        background-color: #FFF;
+        width:55%;
+     
+        
+    }
+    
+    hr {
+        width:80%;
+    }
+
+.section1 {
+    
+    float: left;
+}
+
+.section2 {
+    
+   float: center;
+}
+.tab-pane {
+    
+  
+}
+  
+    .panel-heading {
+        
+       
+        background-color: #E3E7EA;
+        padding-top:0.5%;
+         padding-bottom:0.2%;
+         padding-left:0.2%;
+         padding-right:0.2%;
+          margin: auto;
+        
+        
+    }
+
+td {
+    font-size: 11px;
+  
+}
+
+
+
+.tab-content > .tab-pane:not(.active) {
+    display: block;
+    height: 0;
+    overflow-y: hidden;
+}
+
+th {
+    font-size: 11px;
+  
+}
+.btn-facebook {
+	color: #fff;
+	background-color: #4C67A1;
+}
+.btn-facebook:hover {
+	color: #fff;
+	background-color: #405D9B;
+}
+.btn-facebook:focus {
+	color: #fff;
+}
+
+.fa-facebook{
+    background-color: #405D9B;
+    
+}
+  .glyphicon-star {
+   color: #FFCC11;
+}
+    
+   
+    
+.center_div{
+    margin: 0 auto;
+    width:80% /* value of your choice which suits your alignment */
+}
+    
+    
+    body {
+        background-image: url("http://cs-server.usc.edu:45678/hw/hw8/images/background.png");
+    }
+    
+    .submitted .ng-invalid{
+    border: 1px solid red;
+}
+    .red {
+  border: solid 1px red;
+}
+
+.item {
+   
+    animation-duration: 0.30s;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 0.30s;
+    -webkit-animation-timing-function: ease-in-out;
+}
+
+.item.ng-enter {
+    animation-name: slideFromLeft;
+    -webkit-animation-name: slideFromLeft;
+}
+.item.moveToLeft.ng-enter {
+    animation-name: slideFromRigh;
+    -webkit-animation-name: slideFromRight;
+}
+.item.ng-leave {
+    animation-name: slideFromRight;
+    animation-direction: reverse;
+    -webkit-animation-name: slideFromRight;
+    -webkit-animation-direction: reverse;
+}
+.item.moveToLeft.ng-leave {
+    animation-name: slideFromLeft;
+    animation-direction: reverse;
+    -webkit-animation-name: slideFromLeft;
+    -webkit-animation-direction: reverse;
+}
+
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes slideFromRight {
+    0% {
+        -webkit-transform: translateX(100%);
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes slideFromLeft {
+    0% {
+        -webkit-transform: translateX(-100%);
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+    }
+}
