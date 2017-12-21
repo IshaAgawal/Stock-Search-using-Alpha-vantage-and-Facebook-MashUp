@@ -26,6 +26,9 @@ console.log(symbolURL);
 
 request(symbolURL, function (error, response, body) {
     if (!error && response.statusCode == 200) {
+        res.setHeader('Content-Type', 'application/json');
+    res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
         res.send(body) 
      }
 
@@ -41,9 +44,10 @@ app.get('/newsFeed', function(req, res) {
 request(newsURL, function (error, response, body) {
 
 parseString(response.body, function (err, result) {
-   res.setHeader('Content-Type', 'application/json');
-	res.header("Access-Control-Allow-Origin", "*");
+    res.setHeader('Content-Type', 'application/json');
+    res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
+   
     res.send(result);
 })
 
@@ -51,8 +55,6 @@ parseString(response.body, function (err, result) {
 })
 
 app.get('/indicatorData', function(req, res) {
-    
-    console.log('inside indicator data');
 
 	var indicatorURL = ("https://www.alphavantage.co/query?function=").concat(req.query.indicator).concat("&symbol=").concat(req.query.symbol)
 						.concat("&interval=daily&time_period=10&series_type=close&apikey=A2YO93CBH2X5ELC2");
@@ -62,7 +64,7 @@ app.get('/indicatorData', function(req, res) {
 request(indicatorURL, function (error, response, body) {
     if (!error && response.statusCode == 200) {
         res.setHeader('Content-Type', 'application/json');
-	res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
         res.send(body) 
      }
@@ -80,7 +82,7 @@ app.get('/stockSuggestions', function(req, res) {
 request(suggestionsURL, function (error, response, body) {
     if (!error && response.statusCode == 200) {
         res.setHeader('Content-Type', 'application/json');
-	res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
         res.send(body) 
      }
@@ -91,9 +93,9 @@ request(suggestionsURL, function (error, response, body) {
 
 
 
-app.use(serveStatic('/Users/manishbansal/Desktop/CSCI-571/homework7/hw8'))
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
+
+app.listen(8081, function () {
+  console.log('Example app listening on port 8081!')
 })
 
